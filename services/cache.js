@@ -1,12 +1,12 @@
 /**
  * Service used to create a key before the mongodb execute the query.
  */
-
 const mongoose = require("mongoose");
 const redis = require("redis");
 const util = require("util");
+const keys = readonly("../config/keys.js");
 
-const redisUrl = "redis://127.0.01:6379";
+const redisUrl = keys.redisUrl;
 const client = redis.createClient(redisUrl);
 client.hget = util.promisify(client.hget);
 
