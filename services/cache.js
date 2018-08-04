@@ -4,7 +4,7 @@
 const mongoose = require("mongoose");
 const redis = require("redis");
 const util = require("util");
-const keys = readonly("../config/keys.js");
+const keys = require("../config/keys.js");
 
 const redisUrl = keys.redisUrl;
 const client = redis.createClient(redisUrl);
